@@ -1,0 +1,48 @@
+
+<div class= "background">
+<form action="/signup" method="post">
+
+<div class= "container-fluid">
+    <div class= "row">
+        <div class= "col-lg-3"></div>
+            <div class= "col-lg-6 col-xs-12">
+                <div class= "col-lg-3"></div>
+            <span id= "signup-title">Sign Up</span>        
+
+                    <div class= "user-name">
+                        <label for="name">N A M E:</label>
+                        <input type="text" name= "name" class = "input" id="name">
+                    </div>
+
+                    <div class = "user-photo">
+                        <label for="photo">U P L O A D<br> P H O T O:</label>
+                        <input type="text" name= "photo" class = "input" id="photo">
+                    </div>
+
+                    <div class= "signup-username">
+                        <label for="username">E - M A I L: </label>
+                        <input type="text" name="username" class = "input" id="username">
+                    </div>
+
+                    <div class="signup-password">
+                        <label for="password">P A S S W O R D: </label>
+                        <input type="text" name="password" id="password" class= "input">
+                    </div>
+                </div>
+    </div>
+</div>
+
+<button id="login-btn"><a href= "/">Log In</button></a>
+
+<button id="log-in">Create Account</button>
+
+</form>
+<br>
+<br>
+
+{{#if errorMessage}}
+
+<div class= "error-msg">{{errorMessage}}</div>
+
+{{/if}}
+</div>

@@ -1,0 +1,48 @@
+
+<div class ='container-fluid title'>
+    <div class= "row">
+        <div class= "col-lg-3"></div>
+        <div class= "col-lg-6 col-xs-12">
+     <span>Binge Rate</span>
+     <div class= "col-lg-3"></div>
+        </div>
+    </div>
+</div>
+
+<p>Looking for a new movie or TV series to watch? 
+    Just Log In and Check out what shows and movies 
+    people are talking about.
+</p>
+
+<form action="/login" method="post">
+
+<div class= "container-fluid">
+    <d class= "row">
+        <div class= "col-lg-3"></div>
+            <div class= "col-lg-6 col-xs-12">
+                <div class= "col-lg-3"></div>
+
+                    <div class= "login-username">
+                        <label for="username">E - M A I L: </label>
+                        <input type="text" name="username" id="username">
+                    </div>
+
+                    <div class="login-password">
+                        <label for="password">P A S S W O R D: </label>
+                        <input type="text" name="password" id="password">
+                    </div>
+                </div>
+ </div>
+    <button id="log-in">Log In</button>
+
+</form>
+
+
+        <button id="create-act"><a href="/signup">Create An Account</a></button>
+
+
+{{#if message}}
+
+<div class= "error-msg">{{message}}</div>
+
+{{/if}}
