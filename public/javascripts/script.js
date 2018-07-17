@@ -4,6 +4,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
-document.getElementsByClassName('searchButton').onclick = function(){
-  
-}

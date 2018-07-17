@@ -14,8 +14,10 @@
         </div>
 <div class="wrap">
    <div class="search">
-      <input id= "myInput" type="text" class="searchTerm" placeholder="What are you looking for?">
+       <form action="/shows/search" method= "get">
+      <input id= "myInput" name = "searchInput" type="text" class="searchTerm" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">
+          </form>
         <i class="fa fa-search"></i>
      </button>
    </div>

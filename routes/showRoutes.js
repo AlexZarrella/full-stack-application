@@ -16,6 +16,16 @@ Show.find()
 })
 })
 
+showRouter.get('/shows/search', (req, res, next)=>{
+    const search = req.query.searchInput;
+    Show.find({
+        "title": {"$regex": search, "$options": "i"}
+    })
+    .then((shows)=>{
+        res.render('user/showList', {listOfShows: shows});
+    })
+})
+
 showRouter.get('/shows/:id',ensureLogin.ensureLoggedIn(), (req, res, next)=>{
     const id = req.params.id;
     Show.findById(id)

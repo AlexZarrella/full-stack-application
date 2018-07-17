@@ -14,6 +14,16 @@ movieRouter.get('/movies', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
     })
 })
 
+movieRouter.get('/movies/search', (req, res, next)=>{
+    const search = req.query.searchInput;
+    Movie.find({
+        "title": {"$regex": search, "$options": "i"}
+    })
+    .then((movies)=>{
+        res.render('user/moviesList', {listOfMovies: movies})
+    })
+})
+
 movieRouter.get('/movies/:id',ensureLogin.ensureLoggedIn(), (req, res, next)=>{
     const id = req.params.id;
     Movie.findById(id)
