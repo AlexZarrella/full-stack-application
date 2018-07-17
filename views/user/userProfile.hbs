@@ -1,1 +1,36 @@
-hey
+    {{#if theUser}}
+    
+    <div class="container-fluid">
+        <div class="row nav-row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <h1 class= "nav-title"> Binge Rate </h1>
+            </div> 
+            <div class="col-sm-4">
+                <ul class="links-in-nav">
+                    <li><a id="first-link" href="#">Home</a></li>
+                    <li><a href="/shows">TV Shows</a> </li>
+                    <li><a href="/movies">Movies</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+<div class= "profile-info">
+    <div class= "profile-photo">
+        <img src="{{theUser.image}}" alt="">
+    </div>
+
+    <div class= "profile-name">
+        <h3>{{theUser.username}}</h3>
+    </div>
+</div>
+
+
+
+
+
+<footer>
+    <h5>Created by Alex</h5>
+</footer>
+{{/if}}

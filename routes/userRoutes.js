@@ -11,7 +11,7 @@ userRouter.get('/', (req, res, next)=>{
 });
 
 userRouter.post('/login', passport.authenticate("local", {
-    successRedirect: "/profile/:id",
+    successRedirect: "/myprofile",
     failureRedirect: "/",
     failureFlash: true,
     passReqToCallBack: true
@@ -56,8 +56,22 @@ userRouter.post('/signup', (req, res, next)=>{
 userRouter.get('/profile/:id', (req, res, next)=>{
     const userID = req.params.id;
     User.findById(userID)
-    .then((response)=>{
-        res.render('user/userProfile')
+    .then((theUser)=>{
+        res.render('user/userProfile', {theUser})
+    })
+    .catch((err)=>{
+        next(err);
+    })
+})
+
+userRouter.get('/myprofile',ensureLogin.ensureLoggedIn(), (req, res, next)=> {
+    const userID = req.user._id;
+    User.findById(userID)
+    .then((theUser)=>{
+        res.render('user/userProfile', {theUser})
+    })
+    .catch((err)=>{
+        next(err);
     })
 })
 

@@ -1,0 +1,39 @@
+    <div class="container-fluid">
+        <div class="row nav-row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <h1 class= "nav-title"> Binge Rate </h1>
+            </div> 
+            <div class="col-sm-4">
+                <ul class="links-in-nav">
+                    <li><a id="first-link" href="/myprofile">Home</a></li>
+                    <li><a href="/shows">TV Shows</a> </li>
+                    <li><a href="/movies">Movies</a></li>
+                </ul>
+            </div>
+        </div>
+<div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div>
+<div class= "showList">
+{{#each listOfMovies}}
+<div class= "show-info">
+<div class= "show-cover">
+<a href= "/movies/{{this._id}}"><img src="{{this.image}}" alt=""></a>
+</div>
+<div class= "title-show">
+{{this.title}}
+</div>
+</div>
+
+{{/each}}
+</div>
+
+<footer>
+    <h5>Created by Alex</h5>
+</footer>

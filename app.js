@@ -100,5 +100,13 @@ app.use('/', index);
 const userRoutes = require('./routes/userRoutes');
 app.use('/', userRoutes);
 
+const showRoutes = require('./routes/showRoutes');
+app.use('/', showRoutes);
+
+const reviewRoutes = require('./routes/reviewRoutes');
+app.use('/', reviewRoutes);
+
+const movieRoutes = require('./routes/movieRoutes');
+app.use('/', movieRoutes);
 
 module.exports = app;

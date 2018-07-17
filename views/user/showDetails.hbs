@@ -1,0 +1,60 @@
+    <div class="container-fluid">
+        <div class="row nav-row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <h1 class= "nav-title"> Binge Rate </h1>
+            </div> 
+            <div class="col-sm-4">
+                <ul class="links-in-nav">
+                    <li><a id="first-link" href="/myprofile">Home</a></li>
+                    <li><a href="/shows">TV Shows</a> </li>
+                    <li><a href="/movies">Movies</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <div class= "showdetails-img">
+        <img src="{{theShow.image}}" alt="">
+    </div>
+
+    
+    <div class= "showdetails-info">
+        <h2 class= "showdetails-title">{{theShow.title}}</h2>
+        <br>
+        <span><strong>Genre: </strong>{{theShow.genre}}</span>
+        <br>
+        <span><strong>Cast: </strong>{{theShow.cast}}</span>
+        <br>
+        <span><strong>Summary: </strong>{{theShow.summary}}</span>
+    </div>
+
+    <div class= "reviews">
+        <h4>Reviews</h4>
+    </div>
+
+    <div class= "show-all-reviews">
+        {{#each theShow.reviews}}
+        <span>Name: {{this.reviewer}}</span>
+        <br>
+        <span>Rating: {{this.rating}} / 5</span>
+        <br>
+        <span>{{this.content}}</span>
+        <br>
+        <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
+            <button id= "delete-btn">Delete</button>
+        </form>
+        {{/each}}
+    </div>
+
+<div class= "leave-review">
+    <a href="/shows/{{theShow._id}}/reviews/new">Leave a review</a>
+</div>
+
+
+
+<footer>
+    <h5>Created by Alex</h5>
+</footer>
+
+
+

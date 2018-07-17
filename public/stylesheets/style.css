@@ -1,7 +1,8 @@
+@charset "UTF-8";
 html {
   margin-top: -1rem;
-  height: 110%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 130%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 130%);
   overflow: hidden; }
 
 #stars {
@@ -55,19 +56,19 @@ html {
 .title span {
   position: absolute;
   color: #C3073F;
-  font-size: 7rem;
+  font-size: 9rem;
   font-family: 'Unlock', cursive;
-  margin-left: 1rem;
-  top: 14rem;
+  margin-left: 8rem;
+  top: 20rem;
   width: 800px;
   text-shadow: 10px 2px #6F2232; }
 
 p {
   position: absolute;
   color: #8c8c8c;
-  top: 26rem;
+  top: 35rem;
   width: 500px;
-  margin-left: 29rem;
+  margin-left: 45rem;
   text-align: center;
   font-family: 'Quicksand', sans-serif; }
 
@@ -75,44 +76,42 @@ p {
   .title span {
     font-size: 4rem;
     top: 10rem;
-    margin-left: 0.5rem; }
+    margin-left: 6.5rem; }
   p {
-    margin-left: 3rem;
+    margin-left: 4rem;
     width: 300px;
     top: 20rem; }
   .login-password {
-    margin-top: 4rem;
-    left: -22rem;
-    margin-top: 0rem; }
+    left: -30rem; }
   .login-username {
-    margin-left: 1.5rem;
-    margin-top: -5rem; }
+    margin-top: -15rem; }
   #log-in {
     margin-top: 0rem;
-    left: -32rem; }
+    left: -50rem; }
   #create-act {
     margin-top: 0rem;
-    left: -68rem; } }
+    left: -108rem; } }
 
 .login-username {
   display: flex;
   position: absolute;
-  top: 33rem;
+  top: 46rem;
   color: white;
+  margin-left: 4rem;
   font-family: 'Pathway Gothic One', sans-serif; }
 
 .login-password {
   display: flex;
   position: absolute;
-  top: 33rem;
+  top: 46rem;
   color: white;
-  margin-left: 23rem;
+  margin-left: 33rem;
   font-family: 'Pathway Gothic One', sans-serif; }
 
 #log-in {
   position: absolute;
-  top: 40rem;
-  margin-left: 40rem;
+  top: 60rem;
+  margin-left: 63rem;
   padding: 10px 50px;
   color: white;
   background-color: rgba(60, 60, 61, 0.5);
@@ -124,8 +123,8 @@ p {
 
 #create-act {
   position: absolute;
-  margin-left: 75rem;
-  margin-top: 2rem;
+  margin-left: 120rem;
+  margin-top: -4.5rem;
   background-color: rgba(195, 7, 85, 0.3);
   padding: 10px 25px;
   border-radius: 30px;
@@ -141,7 +140,8 @@ label {
 
 input {
   width: 200px;
-  height: 35px; }
+  height: 35px;
+  color: black; }
 
 @keyframes animStar {
   from {
@@ -152,10 +152,9 @@ input {
 #signup-title {
   position: absolute;
   color: #C3073F;
-  font-size: 8rem;
+  font-size: 10rem;
   font-family: 'Unlock', cursive;
-  margin-left: 9rem;
-  top: 7.5rem;
+  top: 9rem;
   width: 800px;
   text-shadow: 10px 2px #6F2232; }
 
@@ -164,54 +163,348 @@ input {
 
 .user-name {
   position: absolute;
-  margin-top: 20rem;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  margin-left: 15rem; }
-
-.signup-username {
-  position: absolute;
-  margin-top: 32rem;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  margin-left: 15rem; }
-
-.signup-password {
-  position: absolute;
-  margin-top: 37rem;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  margin-left: 15rem; }
-
-.user-photo {
-  position: absolute;
   margin-top: 25rem;
   display: flex;
   flex-direction: column;
   color: white;
-  margin-left: 15rem; }
+  margin-left: 22rem; }
+
+.signup-username {
+  position: absolute;
+  margin-top: 45rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 22rem; }
+
+.signup-password {
+  position: absolute;
+  margin-top: 54rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 22rem; }
+
+.user-photo {
+  position: absolute;
+  margin-top: 34rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 22rem; }
 
 .input {
   width: 260px; }
 
 #login-btn {
   position: absolute;
-  margin-top: 4rem;
+  margin-top: 5rem;
   background-color: rgba(195, 7, 85, 0.3);
   padding: 10px 25px;
   border-radius: 30px;
   border: dotted;
   font-size: 14px;
   font-family: 'Quicksand', sans-serif;
-  margin-left: 81rem; }
+  margin-left: 128rem; }
 
 .error-msg {
   position: absolute;
   color: white;
   top: 45rem;
   left: 28rem; }
+
+ul {
+  list-style-type: none; }
+
+.links-in-nav {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  margin-top: 3rem; }
+
+li {
+  padding-right: 3rem; }
+
+.nav-title {
+  font-family: 'Unlock', cursive;
+  color: #C3073F;
+  text-shadow: 6px 2px #6F2232; }
+
+.container-fluid {
+  background-color: #27272e; }
+
+.container-fluid a {
+  color: white;
+  font-family: 'Quicksand', sans-serif; }
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: rgba(78, 78, 80, 0.3);
+  color: #C3073F;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif; }
+
+.profile-photo {
+  position: absolute;
+  margin-top: 3rem;
+  margin-left: 7rem; }
+
+.profile-photo img {
+  height: 250px; }
+
+.profile-name {
+  position: absolute;
+  margin-top: 29rem;
+  margin-left: 13rem;
+  color: white;
+  font-family: 'Quicksand', sans-serif; }
+
+.profile-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(85, 81, 81, 0.5);
+  height: 360px;
+  width: 400px;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  border-radius: 20px; }
+
+@media (max-width: 480px) {
+  .profile-photo {
+    margin-left: 12rem; }
+  .profile-info {
+    margin-left: 2rem;
+    width: 330px;
+    height: 200px; }
+  .profile-photo img {
+    width: 80px;
+    height: 80px; }
+  .profile-name {
+    margin-top: 11rem;
+    margin-left: 10rem; } }
+
+.showList {
+  position: absolute;
+  top: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 4rem; }
+
+.show-cover img {
+  max-width: 200px;
+  max-height: 200px; }
+
+.show-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 3rem;
+  margin-bottom: 1rem; }
+
+.title-show {
+  color: white;
+  font-family: 'Quicksand', sans-serif; }
+
+.showdetails-img img {
+  max-height: 450px;
+  max-width: 450px;
+  position: absolute;
+  margin-top: 14rem;
+  margin-left: 8rem;
+  border-radius: 20px; }
+
+.showdetails-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(85, 81, 81, 0.5);
+  width: 400px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 20px;
+  margin-left: 50rem;
+  top: 30rem;
+  color: white;
+  text-align: center; }
+
+.reviews h4 {
+  position: absolute;
+  margin-top: 5rem;
+  left: 105rem;
+  font-size: 60px;
+  color: #C3073F;
+  font-family: 'Unlock', cursive;
+  text-shadow: 6px 3px #6F2232; }
+
+.show-all-reviews {
+  position: absolute;
+  margin-top: 13rem;
+  left: 103rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(85, 81, 81, 0.5);
+  width: 300px;
+  padding-left: 5rem;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 20px; }
+
+.leave-review {
+  position: absolute;
+  margin-top: 8rem;
+  left: 18rem;
+  font-size: 20px; }
+
+#delete-btn {
+  background-color: black;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  margin-left: 7rem; }
+
+.review-image {
+  max-height: 500px;
+  max-width: 500px;
+  position: absolute;
+  margin-top: 14rem;
+  left: 20rem;
+  border-radius: 20px; }
+
+.review-flex {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 75rem;
+  background-color: rgba(85, 81, 81, 0.5);
+  padding: 20px 20px;
+  border-radius: 20px;
+  top: 18rem;
+  color: #C3073F;
+  font-family: 'Quicksand', sans-serif; }
+
+textarea {
+  color: black; }
+
+#submit-review {
+  width: 150px;
+  margin-left: 14rem; }
+
+#reviewer {
+  visibility: hidden; }
+
+.rate-area {
+  border-style: none;
+  margin-right: 10rem; }
+
+.rate-area:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0); }
+
+.rate-area:not(:checked) > label {
+  float: right;
+  width: 1em;
+  padding: 0 .1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 400%;
+  line-height: 1.2;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb; }
+
+.rate-area:not(:checked) > label:before {
+  content: '★ '; }
+
+.rate-area > input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+  font-size: 450% !important; }
+
+.rate-area:not(:checked) > label:hover, .rate-area:not(:checked) > label:hover ~ label {
+  color: gold; }
+
+.rate-area > input:checked + label:hover, .rate-area > input:checked + label:hover ~ label, .rate-area > input:checked ~ label:hover, .rate-area > input:checked ~ label:hover ~ label, .rate-area > label:hover ~ input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod; }
+
+.rate-area > label:active {
+  position: relative;
+  top: 2px;
+  left: 2px; }
+
+@media (max-width: 480px) {
+  .showdetails-img img {
+    width: 130px;
+    margin-top: 2rem;
+    margin-left: 1rem; }
+  html {
+    overflow: visible;
+    height: 270%; }
+  #submit-review {
+    margin-left: 7rem; }
+  .showdetails-info {
+    margin-left: 0rem;
+    font-size: 12px;
+    width: 370px;
+    padding: 2px 2px;
+    margin-top: 6rem; }
+  .showdetails-title {
+    font-size: 12px; }
+  .reviews h4 {
+    margin-left: -98rem;
+    margin-top: 50rem; }
+  .show-all-reviews {
+    margin-left: -98rem;
+    margin-top: 60rem; }
+  footer {
+    visibility: hidden; } }
+
+@media (max-width: 480px) {
+  .review-image {
+    max-width: 130px;
+    margin-left: -8rem;
+    margin-top: 3rem; }
+  .review-flex {
+    margin-left: -73rem;
+    width: 350px;
+    margin-top: 25rem; }
+  .rate-area {
+    width: 400px;
+    margin-left: -11rem; } }
+
+@media (max-width: 480px) {
+  .show-info {
+    margin-top: 6rem;
+    margin-right: 2rem;
+    margin-bottom: -2rem; }
+  .show-cover img {
+    width: 100px;
+    height: 130px; }
+  .showList {
+    margin-top: 2rem; } }
+
+.search {
+  position: absolute;
+  margin-left: 33rem;
+  margin-top: -4.5rem;
+  font-family: 'Quicksand', sans-serif; }
+
+.searchButton {
+  position: absolute;
+  margin-top: -3.5rem;
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */
