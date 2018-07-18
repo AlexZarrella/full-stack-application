@@ -3,7 +3,7 @@ const Show     = require('../models/showModel');
 const Movie    = require ('../models/movieModel');
 
 const dbName = 'starter-code';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(process.env.MONGODB_URI);
 
 const shows = [{
     title: "The Office",
