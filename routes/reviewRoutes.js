@@ -33,13 +33,13 @@ reviewRouter.post('/shows/:id/reviews/create',ensureLogin.ensureLoggedIn('/'), (
 
 reviewRouter.get('/shows/:id/reviews/edit/:reviewIndex',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
     const reviewIndex = req.params.reviewIndex;
-    const entireReview= {};
-    entireReview.reviewer = req.user._id;
-    entireReview.rating = req.body.rating;
-    entireReview.content = req.body.content;
+
     Show.findById(req.params.id)
+    .populate("reviews.reviewer")
     .then((theShow)=>{
-        res.render('user/editShowReviews', {theShow: theShow, reviewIndex: reviewIndex, reviews: entireReview});
+        const entireReview= theShow.reviews[reviewIndex];
+
+        res.render('user/editShowReviews', {theShow: theShow, reviewIndex: reviewIndex, review: entireReview });
     })
     .catch((err)=>{
         next(err);

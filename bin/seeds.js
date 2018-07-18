@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Show     = require('../models/showModel');
-// const Movie    = require ('../models/movieModel');
+const Movie    = require ('../models/movieModel');
 
 const dbName = 'starter-code';
 mongoose.connect(`mongodb://localhost/${dbName}`);
@@ -308,161 +308,294 @@ Show.create(shows)
     console.log(err);
 })
 
-// const movies = [
-// {
-//     title: "How It Ends",
-//     genre: "Action",
-//     image: "/images/moviepic/howitendscover.jpg",
-//     cast: ["Theo James", "Forest Whitaker", "Kat Graham"],
-//     plot: "When a mysterious disaster turns the country into a war zone, a young lawyer heads west with his future father-in-law to find his pregnant fiance"
-// },
-// {
-//     title: "Brain On Fire",
-//     genre: "Drama",
-//     image: "/images/moviepic/brainonfirecover.jpg",
-//     cast: ["Chloe Grace Moretz", "Thomas Mann", "Richard Armitage"],
-//     plot: "A young, capable professional cannot explain her newly erratic behavior."
-// },
-// {
-//     title: "Set It Up",
-//     genre: "Comedy",
-//     image: "/images/moviepic/setitupcover.jpg",
-//     cast: ["Zoey Deutch", "Glen Powell", "Lucy Liu"],
-//     plot: "Two corporate executive assistants hatch a plan to match-make their two bosses."
-// },
-// {
-//     title: "Anon",
-//     genre: "Sci-Fi",
-//     image: "/images/moviepic/anoncover.jpg",
-//     cast: ["Clive Owen", "Afiya Bennett", "Morgan Allen"],
-//     plot: "In a world without anonymity or crime, a detective meets a woman who threatens their security."
-// },
-// {
-//     title: "The Titan",
-//     genre: "Sci-Fi",
-//     image: "/images/moviepic/titancover.jpg",
-//     cast: ["Sam Worthington", "Taylor Schilling", "Tom Wilkinson"],
-//     plot: "A military family takes part in a ground-breaking experiment of genetic evolution and space exploration."
-// },
-// {
-//     title: "Alex Strangelove",
-//     genre: "Comedy",
-//     image: "/images/moviepic/alexstrangelovecover.jpg",
-//     cast: ["Michael Abela", "Daniel Doheny", "Brendan Archer"],
-//     plot: "He loves his girlfriend. And she's eager to devirginize him. But why can't he stop thinking about the boy he just met?"
-// },
-// {
-//     title: "Ibiza",
-//     genre: "Comedy",
-//     image: "/images/moviepic/ibizacover.jpg",
-//     cast: ["Gwen Elizabeth Duchon", "Gillian Jacobs", "Michaela Watkins"],
-//     plot: "A young American woman and her two best friends seek out a hot DJ in Spain."
-// },
-// {
-//     title: "Clinical",
-//     genre: "Thriller",
-//     image: "/images/moviepic/clinicalcover.jpg",
-//     cast: ["Vinessa Shaw", "Alistair Legrand", "India Eisley"],
-//     plot: "A psychiatrist tries to put her life back together after a violent attack by seeking to repair the life of a new patient, but he has his own terrifying history."
-// },
-// {
-//     title: "Mute",
-//     genre: "Mystery",
-//     image: "/images/moviepic/mutecover.jpg",
-//     cast: ["Alexander Skarsgard", "Paul Rudd", "Justin Theroux"],
-//     plot: "A mute bartender goes up against his city's gangsters in an effort to find out what happened to his missing partner."
-// },
-// {
-//     title: "Little Evil",
-//     genre: "Comedy",
-//     image: "/images/moviepic/littleevilcover.jpg",
-//     cast: ["Evangeline Lilly", "Owen Atlas", "Adam Scott"],
-//     plot: "Gary, who has just married Samantha, the woman of his dreams, discovers that her six-year-old son may be the Antichrist."
-// },
-// {
-//     title: "Dude",
-//     genre: "Comedy",
-//     image: "/images/moviepic/dudecover.jpg",
-//     cast: ["Lucy Hale", "Kathryn Prescott", "Alexandra Shipp"],
-//     plot: "A group of teenage girlfriends deal with life after high school."
-// },
-// {
-//     title: "#RealityHigh",
-//     genre: "Comedy",
-//     image: "/images/moviepic/realityhighcover.jpg",
-//     cast: ["Nesta Cooper", "Keith Powers", "Alicia Sanz"],
-//     plot: "High-achieving high-school senior Dani Barnes dreams of getting into UC Davis, the world's top veterinary school. Then a glamorous new friend draws her into a Southern California scene that threatens everything she's worked for."
-// },
-// {
-//     title: "Shimmer Lake",
-//     genre: "Crime",
-//     image: "/images/moviepic/shimmerlakecover.jpg",
-//     cast: ["Benjamin Walker", "Rainn Wilson", "Stephanie Sigman"],
-//     plot: "An inventive crime thriller told backwards -- reversing day by day through a week -- following a local sheriff's quest to unlock the mystery of three small town criminals and a bank heist gone wrong."
-// },
-// {
-//     title: "The Discovery",
-//     genre: "Drama",
-//     image: "/images/moviepic/discoverycover.jpg",
-//     cast: ["Robert Redford", "Mary Steenburgen", "Brian McCarthy"],
-//     plot: "Two years after the afterlife is scientifically proven, a man attempts to help a young woman break away from her dark past."
-// },
-// {
-//     title: "iBoy",
-//     genre: "Action",
-//     image: "/images/moviepic/iboycover.jpg",
-//     cast: ["Bill Milner", "Maisie Williams", "Miranda Richardson"],
-//     plot: "After being shot, Tom wakes from a coma to discover that fragments of his smart phone have been embedded in his head, and worse, that returning to normal teenage life is impossible because he has developed a strange set of superpowers."
-// },
-// {
-//     title: "The Kissing Booth",
-//     genre: "Comedy",
-//     image: "/images/moviepic/kissingboothcover.jpg",
-//     cast: ["Megan du Plessis", "Caitlyn de Abrue"],
-//     plot: "A high school student is forced to confront her secret crush at a kissing booth."
-// },
-// {
-//     title: "Calibre",
-//     genre: "Thriller",
-//     image: "/images/moviepic/calibrecover.jpg",
-//     cast: ["Jack Lowden", "Martin McCann", "Tony Curran"],
-//     plot: "Two lifelong friends head up to an isolated Scottish Highlands village for a weekend hunting trip. Nothing could prepare them for what follows."
-// },
-// {
-//     title: "White Fang",
-//     genre: "Animation",
-//     image: "/images/moviepic/whitefangcover.jpg",
-//     cast: ["Rashida Jones", "Nick Offerman", "Paul Giamatti"],
-//     plot: "Based on the timeless novel by Jack London, White Fang follows the story of a boy who befriends a half breed wolf as he searches for his father, who has mysteriously gone missing during the Gold Rush."
-// },
-// {
-//     title: "Amanda Knox",
-//     genre: "Documentary",
-//     image: "/images/moviepic/amandaknoxcover.jpg",
-//     cast: ["Amanda Knox", "Meredith Kercher", "Raffaele Sollecito"],
-//     plot: "American exchange student Amanda Knox is convicted and eventually acquitted for the 2007 death of another student in Italy."
-// },
-// {
-//     title: "Tallulah",
-//     genre: "Comedy",
-//     image: "/images/moviepic/tallulahcover.jpg",
-//     cast: ["Ellen Page", "Allison Janney", "Tammy Blanchard"],
-//     plot: "Desperate to be rid of her toddler, a dissatisfied Manhattan housewife hires a stranger to babysit and ends up getting much more than she bargained for."
-// },
-// {
-//     title: "ARQ",
-//     genre: "Sci-Fi",
-//     image: "/images/moviepic/arqcover.jpg",
-//     cast: ["Robbie Amell", "Rachael Taylor", "Shaun Benson"],
-//     plot: "Trapped in a lab and stuck in a time loop, a disoriented couple fends off masked raiders while harboring a new energy source that could save humanity."
-// }
-// ]
+const movies = [
+{
+    title: "How It Ends",
+    genre: "Action",
+    image: "/images/moviepic/howitendscover.jpg",
+    cast: ["Theo James", "Forest Whitaker", "Kat Graham"],
+    plot: "When a mysterious disaster turns the country into a war zone, a young lawyer heads west with his future father-in-law to find his pregnant fiance"
+},
+{
+    title: "Brain On Fire",
+    genre: "Drama",
+    image: "/images/moviepic/brainonfirecover.jpg",
+    cast: ["Chloe Grace Moretz", "Thomas Mann", "Richard Armitage"],
+    plot: "A young, capable professional cannot explain her newly erratic behavior."
+},
+{
+    title: "Set It Up",
+    genre: "Comedy",
+    image: "/images/moviepic/setitupcover.jpg",
+    cast: ["Zoey Deutch", "Glen Powell", "Lucy Liu"],
+    plot: "Two corporate executive assistants hatch a plan to match-make their two bosses."
+},
+{
+    title: "Anon",
+    genre: "Sci-Fi",
+    image: "/images/moviepic/anoncover.jpg",
+    cast: ["Clive Owen", "Afiya Bennett", "Morgan Allen"],
+    plot: "In a world without anonymity or crime, a detective meets a woman who threatens their security."
+},
+{
+    title: "The Titan",
+    genre: "Sci-Fi",
+    image: "/images/moviepic/titancover.jpg",
+    cast: ["Sam Worthington", "Taylor Schilling", "Tom Wilkinson"],
+    plot: "A military family takes part in a ground-breaking experiment of genetic evolution and space exploration."
+},
+{
+    title: "Alex Strangelove",
+    genre: "Comedy",
+    image: "/images/moviepic/alexstrangelovecover.jpg",
+    cast: ["Michael Abela", "Daniel Doheny", "Brendan Archer"],
+    plot: "He loves his girlfriend. And she's eager to devirginize him. But why can't he stop thinking about the boy he just met?"
+},
+{
+    title: "Ibiza",
+    genre: "Comedy",
+    image: "/images/moviepic/ibizacover.jpg",
+    cast: ["Gwen Elizabeth Duchon", "Gillian Jacobs", "Michaela Watkins"],
+    plot: "A young American woman and her two best friends seek out a hot DJ in Spain."
+},
+{
+    title: "Clinical",
+    genre: "Thriller",
+    image: "/images/moviepic/clinicalcover.jpg",
+    cast: ["Vinessa Shaw", "Alistair Legrand", "India Eisley"],
+    plot: "A psychiatrist tries to put her life back together after a violent attack by seeking to repair the life of a new patient, but he has his own terrifying history."
+},
+{
+    title: "Mute",
+    genre: "Mystery",
+    image: "/images/moviepic/mutecover.jpg",
+    cast: ["Alexander Skarsgard", "Paul Rudd", "Justin Theroux"],
+    plot: "A mute bartender goes up against his city's gangsters in an effort to find out what happened to his missing partner."
+},
+{
+    title: "Little Evil",
+    genre: "Comedy",
+    image: "/images/moviepic/littleevilcover.jpg",
+    cast: ["Evangeline Lilly", "Owen Atlas", "Adam Scott"],
+    plot: "Gary, who has just married Samantha, the woman of his dreams, discovers that her six-year-old son may be the Antichrist."
+},
+{
+    title: "Dude",
+    genre: "Comedy",
+    image: "/images/moviepic/dudecover.jpg",
+    cast: ["Lucy Hale", "Kathryn Prescott", "Alexandra Shipp"],
+    plot: "A group of teenage girlfriends deal with life after high school."
+},
+{
+    title: "#RealityHigh",
+    genre: "Comedy",
+    image: "/images/moviepic/realityhighcover.jpg",
+    cast: ["Nesta Cooper", "Keith Powers", "Alicia Sanz"],
+    plot: "High-achieving high-school senior Dani Barnes dreams of getting into UC Davis, the world's top veterinary school. Then a glamorous new friend draws her into a Southern California scene that threatens everything she's worked for."
+},
+{
+    title: "Shimmer Lake",
+    genre: "Crime",
+    image: "/images/moviepic/shimmerlakecover.jpg",
+    cast: ["Benjamin Walker", "Rainn Wilson", "Stephanie Sigman"],
+    plot: "An inventive crime thriller told backwards -- reversing day by day through a week -- following a local sheriff's quest to unlock the mystery of three small town criminals and a bank heist gone wrong."
+},
+{
+    title: "The Discovery",
+    genre: "Drama",
+    image: "/images/moviepic/discoverycover.jpg",
+    cast: ["Robert Redford", "Mary Steenburgen", "Brian McCarthy"],
+    plot: "Two years after the afterlife is scientifically proven, a man attempts to help a young woman break away from her dark past."
+},
+{
+    title: "iBoy",
+    genre: "Action",
+    image: "/images/moviepic/iboycover.jpg",
+    cast: ["Bill Milner", "Maisie Williams", "Miranda Richardson"],
+    plot: "After being shot, Tom wakes from a coma to discover that fragments of his smart phone have been embedded in his head, and worse, that returning to normal teenage life is impossible because he has developed a strange set of superpowers."
+},
+{
+    title: "The Kissing Booth",
+    genre: "Comedy",
+    image: "/images/moviepic/kissingboothcover.jpg",
+    cast: ["Megan du Plessis", "Caitlyn de Abrue"],
+    plot: "A high school student is forced to confront her secret crush at a kissing booth."
+},
+{
+    title: "Calibre",
+    genre: "Thriller",
+    image: "/images/moviepic/calibrecover.jpg",
+    cast: ["Jack Lowden", "Martin McCann", "Tony Curran"],
+    plot: "Two lifelong friends head up to an isolated Scottish Highlands village for a weekend hunting trip. Nothing could prepare them for what follows."
+},
+{
+    title: "White Fang",
+    genre: "Animation",
+    image: "/images/moviepic/whitefangcover.jpg",
+    cast: ["Rashida Jones", "Nick Offerman", "Paul Giamatti"],
+    plot: "Based on the timeless novel by Jack London, White Fang follows the story of a boy who befriends a half breed wolf as he searches for his father, who has mysteriously gone missing during the Gold Rush."
+},
+{
+    title: "Amanda Knox",
+    genre: "Documentary",
+    image: "/images/moviepic/amandaknoxcover.jpg",
+    cast: ["Amanda Knox", "Meredith Kercher", "Raffaele Sollecito"],
+    plot: "American exchange student Amanda Knox is convicted and eventually acquitted for the 2007 death of another student in Italy."
+},
+{
+    title: "Tallulah",
+    genre: "Comedy",
+    image: "/images/moviepic/tallulahcover.jpg",
+    cast: ["Ellen Page", "Allison Janney", "Tammy Blanchard"],
+    plot: "Desperate to be rid of her toddler, a dissatisfied Manhattan housewife hires a stranger to babysit and ends up getting much more than she bargained for."
+},
+{
+    title: "ARQ",
+    genre: "Sci-Fi",
+    image: "/images/moviepic/arqcover.jpg",
+    cast: ["Robbie Amell", "Rachael Taylor", "Shaun Benson"],
+    plot: "Trapped in a lab and stuck in a time loop, a disoriented couple fends off masked raiders while harboring a new energy source that could save humanity."
+},
+{
+    title: "Coco",
+    genre: "Adventure",
+    image: "/images/moviepic/cococover.jpg",
+    cast: ["Anthony Gonzalez", "Gael Garcia Bernal", "Benjamin Bratt"],
+    plot: "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer."
+},
+{
+    title: "The Week Of",
+    genre: "Comedy",
+    image: "/images/moviepic/theweekofcover.jpg",
+    cast: ["Adam Sandler", "Chris Rock", "Steve Buscemi"],
+    plot: "Two fathers with opposing personalities come together to celebrate the wedding of their children. They are forced to spend the longest week of their lives together, and the big day cannot come soon enough."
+},
+{
+    title: "Get Smart",
+    genre: "Action",
+    image: "/images/moviepic/getsmartcover.jpg",
+    cast: ["Steve Carell", "Anne Hathaway", "Alan Arkin"],
+    plot: "A highly intellectual but socially awkward spy is tasked with preventing a terrorist attack from a Russian spy agency."
+},
+{
+    title: "The Boy",
+    genre: "Horror",
+    image: "/images/moviepic/theboy.jpg",
+    cast: ["Lauren Cohan", "Rupert Evans", "James Russell"],
+    plot: "An American nanny is shocked that her new English family's boy is actually a life-sized doll. After she violates a list of strict rules, disturbing events make her believe that the doll is really alive."
+},
+{
+    title: "47 Meters Down",
+    genre: "Horror",
+    image: "/images/moviepic/47metersdown.jpg",
+    cast: ["Mandy Moore", "Claire Holt", "Matthew Modine"],
+    plot: "Two sisters vacationing in Mexico are trapped in a shark cage at the bottom of the ocean. With less than an hour of oxygen left and great white sharks circling nearby, they must fight to survive."
+},
+{
+    title: "Mamma Mia!",
+    genre: "Musical",
+    image: "/images/moviepic/mammamiacover.jpg",
+    cast: ["Lily James", "Amanda Seyfried", "Meryl Streep"],
+    plot: "In this sequel to Mamma Mia!, Sophie learns about her mother's past while pregnant herself."
+},
+{
+    title: "Penelope",
+    genre: "Comedy",
+    image: "/images/moviepic/penelopecover.jpg",
+    cast: ["Christina Ricci", "James McAvoy", "Reese Witherspoon"],
+    plot: "A modern romantic tale about a young aristocratic heiress born under a curse that can only be broken when she finds true love with one who will accept her as one of their own."
+},
+{
+    title: "Playdate",
+    genre: "Thriller",
+    image: "/images/moviepic/playdatecover.jpg",
+    cast: ["Marguerite Moreau", "Richard Ruccolo", "Abby Brammell"],
+    plot: "After befriending a family that has just moved in next door, Emily Valentine begins to realize that these new neighbors are hiding a deadly secret. "
+},
+{
+    title: "Despicable Me 3",
+    genre: "Animation",
+    image: "/images/moviepic/despicableme3cover.jpg",
+    cast: ["Steve Carell", "Kristen Wiig", "Trey Parker"],
+    plot: "Gru meets his long-lost charming, cheerful, and more successful twin brother Dru who wants to team up with him for one last criminal heist."
+},
+{
+    title: "Bright",
+    genre: "Action",
+    image: "/images/moviepic/brightcover.jpg",
+    cast: ["Will Smith", "Joel Edgerton", "Noomi Rapace"],
+    plot: "Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for."
+},
+{
+    title: "The Open House",
+    genre: "Horror",
+    image: "/images/moviepic/openhousecover.jpg",
+    cast: ["Dylan Minnette", "Piercey Dalton", "Patricia Bethune"],
+    plot: "A teenager and his mother find themselves besieged by threatening forces when they move into a new house."
+},
+{
+    title: "The Invitation",
+    genre: "Drama",
+    image: "/images/moviepic/invitationcover.jpg",
+    cast: ["Logan Marshall-Green", "Emayatzy Corinealdi", "Michiel Huisman"],
+    plot: "While attending a dinner party at his former home, a man thinks his ex-wife and her new husband have sinister intentions for their guests."
+},
+{
+    title: "You Get Me",
+    genre: "Crime",
+    image: "images/moviepic/yougetmecover.jpg",
+    cast: ["Bella Thorne", "Halston Sage", "Taylor John Smith"],
+    plot: "Tyler's crazy in love with his perfect girlfriend Ali, but when a big fight makes him and Ali break up, he lands in the arms of Holly, an out-of-towner who shows him a night he's gonna remember. "
+},
+{
+    title: "The Babadook",
+    genre: "Horror",
+    image: "/images/moviepic/babadookcover.jpg",
+    cast: ["Essie Davis", "Noah Wiseman", "Daniel Henshall"],
+    plot: "A widowed mother, plagued by the violent death of her husband, battles with her son's fear of a monster lurking in the house, but soon discovers a sinister presence all around her."
+},
+{
+    title: "The Babysitter",
+    genre: "Comedy",
+    image: "/images/moviepic/babysittercover.jpg",
+    cast: ["Judah Lewis", "Samara Weaving", "Robbie Amell"],
+    plot: "The events of one evening take an unexpected turn for the worst for a young boy trying to spy on his babysitter."
+},
+{
+    title: "To The Bone",
+    genre: "Drama",
+    image: "/images/moviepic/tothebonecover.jpg",
+    cast: ["Rebekah Kennedy", "Lily Collins", "Dana L. Wilson"],
+    plot: "A young woman, dealing with anorexia, meets an unconventional doctor who challenges her to face her condition and embrace life."
+},
+{
+    title: "Creep",
+    genre: "Horror",
+    image: "/images/moviepic/creepcover.jpg",
+    cast: ["Patrick Brice", "Mark Duplass"],
+    plot: "When a videographer answers a Craigslist ad for a one-day job in a remote mountain town, to video the last messages of a dying man, he finds his client is not at all what he initially seems."
+},
+{
+    title: "The Good Neighbor",
+    genre: "Crime",
+    image: "/images/moviepic/goodneighborcover.jpg",
+    cast: ["James Caan", "Logan Miller", "Keir Gilchrist"],
+    plot: "A pair of mischievous high school kids create the illusion of a haunting on an unsuspecting elderly neighbor while keeping his every reaction under surveillance. A series of coincidences leads to tragedy."
+},
+{
+    title: "Forgotten",
+    genre: "Mystery",
+    image: "/images/moviepic/forgottencover.jpg",
+    cast: ["Ha-Neul Kang", "Mu-Yeol Kim", "Seong-kun Mun"],
+    plot: "Jin-Seok (Kang Ha-Neul) moves into a new home with his older brother Yoo-Seok (Kim Moo-Yul), mother (Na Young-Hee) and father (Moon Sung-Geun). Jin-Seok suffers from hypersensitivity, but with medication he is able to live normally."
+}
+]
 
 
-// Movie.create(movies)
-// .then((response)=>{
-//     console.log(`created ${response.length} movies`)
-// })
-// .catch((err)=>{
-//     console.log(err);
-// })
+Movie.create(movies)
+.then((response)=>{
+    console.log(`created ${response.length} movies`)
+})
+.catch((err)=>{
+    console.log(err);
+})

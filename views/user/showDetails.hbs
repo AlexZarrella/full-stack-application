@@ -34,7 +34,7 @@
     </div>
 
     <div class= "show-all-reviews">
-        {{#each theShow.reviews}}
+        {{#each myReviews}}
         <span>Name: {{this.reviewer.username}}</span>
         <br>
         <span>Rating: {{this.rating}} / 5</span>
@@ -45,6 +45,14 @@
             <button id= "delete-btn">Delete</button>
             <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
         </form>
+        {{/each}}
+        {{#each otherReviews}}
+        <span>Name: {{this.reviewer.username}}</span>
+        <br>
+        <span>Rating: {{this.rating}} / 5</span>
+        <br>
+        <span>{{this.content}}</span>
+        <br>
         {{/each}}
     </div>
 

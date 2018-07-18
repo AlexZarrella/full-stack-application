@@ -309,7 +309,7 @@ footer {
 }
 
 .profile-photo img {
-  height: 250px;
+  max-height: 250px;
 }
 
 .profile-name {
@@ -341,8 +341,8 @@ margin-left: 8rem;
   }
 
   .profile-photo img {
-    width: 80px;
-    height: 80px;
+    max-width: 80px;
+    max-height: 80px;
   }
 
   .profile-name {
@@ -480,11 +480,6 @@ textarea {
   margin-left: 14rem;
 }
 
-#reviewer {
-  visibility: hidden;
-}
-
-
 
 
 //rating stars 
@@ -610,7 +605,7 @@ textarea {
     }
 
     .showList {
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
 
     .links-in-nav {
@@ -651,6 +646,7 @@ textarea {
     font-size: 20px;
   }
   
+ 
     
 
     

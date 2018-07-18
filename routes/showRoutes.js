@@ -28,10 +28,20 @@ showRouter.get('/shows/search', ensureLogin.ensureLoggedIn('/') , (req, res, nex
 
 showRouter.get('/shows/:id',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
     const id = req.params.id;
+    const otherReviews = [];
+    const myReviews = [];
     Show.findById(id)
     .populate('reviews.reviewer')
     .then((theShow)=>{
-        res.render('user/showDetails', {theShow: theShow, theUser: req.user});
+        theShow.reviews.forEach(function(oneReview){
+            if (oneReview.reviewer._id.equals(req.user._id)){
+                myReviews.push(oneReview);
+            }
+            else {
+                otherReviews.push(oneReview);
+            }
+        })
+        res.render('user/showDetails', {theShow: theShow, theUser: req.user, otherReviews: otherReviews, myReviews: myReviews});
     })
     .catch((err)=>{
         next(err);

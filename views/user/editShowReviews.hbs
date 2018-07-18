@@ -21,8 +21,8 @@
 <form action="/shows/{{theShow._id}}/reviews/update/{{@index}}" method="post">
 
 <div class= "review-flex">
-<label for= "reviewer">Name: </label>
-<input type="text" id = "reviewer" name= "reviewer" value= "{{reviews.reviewer}}">
+<label for= "reviewer">Name: {{review.reviewer.username}} </label>
+
 <br>
 <br>
 <ul class="rate-area">
@@ -41,7 +41,7 @@
 <br>
 <br>
 <label for= "content">Type Review: </label>
-<textarea name="content" id = "content" cols="60" rows="10" value= "{{reviews.content}}"></textarea>
+<textarea name="content" id = "content" cols="60" rows="10">{{review.content}}</textarea>
 <br>
 <br>
 <button id="submit-review" type= "submit">Submit Review</button>

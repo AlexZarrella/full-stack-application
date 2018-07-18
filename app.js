@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); //keeps information secret .gitignore makes it secret
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');

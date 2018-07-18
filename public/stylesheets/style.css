@@ -253,7 +253,7 @@ footer {
   margin-top: 3rem; }
 
 .profile-photo img {
-  height: 250px; }
+  max-height: 250px; }
 
 .profile-name {
   position: absolute;
@@ -280,8 +280,8 @@ footer {
     height: 200px;
     text-align: center; }
   .profile-photo img {
-    width: 80px;
-    height: 80px; }
+    max-width: 80px;
+    max-height: 80px; }
   .profile-name {
     margin-top: 11rem; } }
 
@@ -396,9 +396,6 @@ textarea {
   width: 150px;
   margin-left: 14rem; }
 
-#reviewer {
-  visibility: hidden; }
-
 .rate-area {
   border-style: none;
   margin-right: 10rem; }
@@ -489,7 +486,7 @@ textarea {
     width: 100px;
     height: 130px; }
   .showList {
-    margin-top: 2rem; }
+    margin-top: 4rem; }
   .links-in-nav {
     font-size: 10px;
     position: absolute;

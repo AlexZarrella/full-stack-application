@@ -6,6 +6,8 @@ const passport      = require('passport');
 const ensureLogin = require('connect-ensure-login');
 const flash        = require('connect-flash');
 
+const uploadCloud  = require('../config/cloudinary');
+
 userRouter.get('/', (req, res, next)=>{
     res.render('index', { "message": req.flash("error") });
 });
@@ -26,9 +28,10 @@ userRouter.get('/signup', (req, res, next)=>{
     res.render('signupPage')
 });
 
-userRouter.post('/signup', (req, res, next)=>{
+userRouter.post('/signup', uploadCloud.single('photo'), (req, res, next)=>{
     const thePassword = req.body.password;
     const theUsername = req.body.username;
+    const image       = req.file.url;
 
     if(thePassword === "" || theUsername === ""){
         res.render('signupPage', {errorMessage: "Please fill in both the username and password in order to create an account"})
@@ -43,7 +46,7 @@ userRouter.post('/signup', (req, res, next)=>{
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(thePassword, salt);
 
-    User.create({username: theUsername, password: hashedPassword})
+    User.create({username: theUsername, password: hashedPassword, image: image})
     .then((response)=>{
         res.redirect('/')
     })
