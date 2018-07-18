@@ -1,4 +1,5 @@
-<div class="container-fluid">
+
+    <div class="container-fluid">
         <div class="row nav-row">
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
@@ -13,14 +14,15 @@
                 </ul>
             </div>
         </div>
-<img class= "review-image" src="{{theMovie.image}}" alt="">
+<img class= "review-image" src="{{theShow.image}}" alt="">
 
 
-<form action="/movies/{{theMovie._id}}/reviews/create" method = "post">
+
+<form action="/shows/{{theShow._id}}/reviews/update/{{@index}}" method="post">
 
 <div class= "review-flex">
-<label for= "reviewer">Name: {{theUser.username}}</label>
-<input type="text" id = "reviewer" name= "reviewer">
+<label for= "reviewer">Name: </label>
+<input type="text" id = "reviewer" name= "reviewer" value= "{{reviews.reviewer}}">
 <br>
 <br>
 <ul class="rate-area">
@@ -39,10 +41,10 @@
 <br>
 <br>
 <label for= "content">Type Review: </label>
-<textarea name="content" id = "content" cols="60" rows="10"></textarea>
+<textarea name="content" id = "content" cols="60" rows="10" value= "{{reviews.content}}"></textarea>
 <br>
 <br>
 <button id="submit-review" type= "submit">Submit Review</button>
 
+
 </form>
-</div>

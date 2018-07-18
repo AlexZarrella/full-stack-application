@@ -2,8 +2,9 @@ const express       = require('express');
 const reviewRouter  = express.Router();
 const Show          = require('../models/showModel');
 const Movie         = require('../models/movieModel');
+const ensureLogin   = require('connect-ensure-login');
 
-reviewRouter.get('/shows/:id/reviews/new', (req, res, next)=> {
+reviewRouter.get('/shows/:id/reviews/new', ensureLogin.ensureLoggedIn('/'), (req, res, next)=> {
     Show.findById(req.params.id)
     .then((theShow)=>{
         res.render('user/addReview', {theShow: theShow, theUser: req.user})
@@ -13,8 +14,14 @@ reviewRouter.get('/shows/:id/reviews/new', (req, res, next)=> {
     })
 });
 
-reviewRouter.post('/shows/:id/reviews/create', (req, res, next)=>{
-    Show.findByIdAndUpdate(req.params.id, {$push: {reviews: req.body}})
+reviewRouter.post('/shows/:id/reviews/create',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
+    const entireReview= {};
+    entireReview.reviewer = req.user._id;
+    entireReview.rating = req.body.rating;
+    entireReview.content = req.body.content;
+
+
+    Show.findByIdAndUpdate(req.params.id, {$push: {reviews: entireReview}})
     .then((response)=>{
         res.redirect(`/shows/${req.params.id}`)
 
@@ -24,7 +31,40 @@ reviewRouter.post('/shows/:id/reviews/create', (req, res, next)=>{
     });
 });
 
-reviewRouter.post('/shows/:id/reviews/delete/:reviewIndex', (req, res, next)=>{
+reviewRouter.get('/shows/:id/reviews/edit/:reviewIndex',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
+    const reviewIndex = req.params.reviewIndex;
+    const entireReview= {};
+    entireReview.reviewer = req.user._id;
+    entireReview.rating = req.body.rating;
+    entireReview.content = req.body.content;
+    Show.findById(req.params.id)
+    .then((theShow)=>{
+        res.render('user/editShowReviews', {theShow: theShow, reviewIndex: reviewIndex, reviews: entireReview});
+    })
+    .catch((err)=>{
+        next(err);
+    })
+
+})
+
+reviewRouter.get('/shows/:id/reviews/update/:reviewIndex', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
+    const updateReview = {
+        reviewer: req.body.reviewer,
+        rating: req.body.rating,
+        content: req.body.content
+    }
+    Show.findByIdAndUpdate(req.params.id, {updateReview}) 
+
+.then((theShow)=>{
+    res.redirect('/shows/' + theShow._id)
+})
+
+.catch((err)=>{
+    next(err);
+})
+})
+
+reviewRouter.post('/shows/:id/reviews/delete/:reviewIndex',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
     const showID = req.params.id;
     const reviewIndex = req.params.reviewIndex;
     Show.findById(showID)
@@ -40,7 +80,7 @@ reviewRouter.post('/shows/:id/reviews/delete/:reviewIndex', (req, res, next)=>{
     })
     })
 })
-reviewRouter.get('/movies/:id/reviews/new', (req, res, next)=> {
+reviewRouter.get('/movies/:id/reviews/new',  ensureLogin.ensureLoggedIn('/'),(req, res, next)=> {
     Movie.findById(req.params.id)
     .then((theMovie)=>{
         res.render('user/addMovieReview', {theMovie: theMovie, theUser: req.user})
@@ -50,7 +90,7 @@ reviewRouter.get('/movies/:id/reviews/new', (req, res, next)=> {
     })
 });
 
-reviewRouter.post('/movies/:id/reviews/create', (req, res, next)=>{
+reviewRouter.post('/movies/:id/reviews/create',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
     Movie.findByIdAndUpdate(req.params.id, {$push: {reviews: req.body}})
     .then((response)=>{
         res.redirect(`/movies/${req.params.id}`)
@@ -61,7 +101,7 @@ reviewRouter.post('/movies/:id/reviews/create', (req, res, next)=>{
     });
 });
 
-reviewRouter.post('/movies/:id/reviews/delete/:reviewIndex', (req, res, next)=>{
+reviewRouter.post('/movies/:id/reviews/delete/:reviewIndex', ensureLogin.ensureLoggedIn('/'),(req, res, next)=>{
     const movieID = req.params.id;
     const reviewIndex = req.params.reviewIndex;
     Movie.findById(movieID)

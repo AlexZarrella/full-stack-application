@@ -9,19 +9,24 @@
                     <li><a id="first-link" href="/myprofile">Home</a></li>
                     <li><a href="/shows">TV Shows</a> </li>
                     <li><a href="/movies">Movies</a></li>
+                    <li><a href= "/logout">Log Out</a></li>
                 </ul>
             </div>
         </div>
 <div class="wrap">
    <div class="search">
        <form action="/shows/search" method= "get">
+       <div class= "searchbar">
       <input id= "myInput" name = "searchInput" type="text" class="searchTerm" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">
+          
           </form>
         <i class="fa fa-search"></i>
+        </div>
      </button>
    </div>
 </div>
+<div class= "overflow-scroll">
 <div class= "showList">
 {{#each listOfShows}}
 <div class= "show-info">
@@ -34,6 +39,7 @@
 </div>
 
 {{/each}}
+</div>
 </div>
 
 <footer>

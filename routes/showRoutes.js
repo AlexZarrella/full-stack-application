@@ -4,7 +4,7 @@ const Show          = require ('../models/showModel');
 const ensureLogin   = require('connect-ensure-login');
 
 
-showRouter.get('/shows', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
+showRouter.get('/shows', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
 
 
 Show.find()
@@ -16,7 +16,7 @@ Show.find()
 })
 })
 
-showRouter.get('/shows/search', (req, res, next)=>{
+showRouter.get('/shows/search', ensureLogin.ensureLoggedIn('/') , (req, res, next)=>{
     const search = req.query.searchInput;
     Show.find({
         "title": {"$regex": search, "$options": "i"}
@@ -26,11 +26,12 @@ showRouter.get('/shows/search', (req, res, next)=>{
     })
 })
 
-showRouter.get('/shows/:id',ensureLogin.ensureLoggedIn(), (req, res, next)=>{
+showRouter.get('/shows/:id',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
     const id = req.params.id;
     Show.findById(id)
+    .populate('reviews.reviewer')
     .then((theShow)=>{
-        res.render('user/showDetails', {theShow});
+        res.render('user/showDetails', {theShow: theShow, theUser: req.user});
     })
     .catch((err)=>{
         next(err);

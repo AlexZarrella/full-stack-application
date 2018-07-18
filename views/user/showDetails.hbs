@@ -9,6 +9,7 @@
                     <li><a id="first-link" href="/myprofile">Home</a></li>
                     <li><a href="/shows">TV Shows</a> </li>
                     <li><a href="/movies">Movies</a></li>
+                    <li><a href= "/logout">Log Out</a></li>
                 </ul>
             </div>
         </div>
@@ -34,7 +35,7 @@
 
     <div class= "show-all-reviews">
         {{#each theShow.reviews}}
-        <span>Name: {{this.reviewer}}</span>
+        <span>Name: {{this.reviewer.username}}</span>
         <br>
         <span>Rating: {{this.rating}} / 5</span>
         <br>
@@ -42,6 +43,7 @@
         <br>
         <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
             <button id= "delete-btn">Delete</button>
+            <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
         </form>
         {{/each}}
     </div>

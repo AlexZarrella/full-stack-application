@@ -4,7 +4,7 @@ const Movie          = require ('../models/movieModel');
 const ensureLogin    = require('connect-ensure-login');
 
 
-movieRouter.get('/movies', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
+movieRouter.get('/movies', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
     Movie.find()
     .then((listOfMovies)=>{
         res.render('user/moviesList', {listOfMovies});
@@ -14,7 +14,7 @@ movieRouter.get('/movies', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
     })
 })
 
-movieRouter.get('/movies/search', (req, res, next)=>{
+movieRouter.get('/movies/search', ensureLogin.ensureLoggedIn('/'),(req, res, next)=>{
     const search = req.query.searchInput;
     Movie.find({
         "title": {"$regex": search, "$options": "i"}
@@ -24,7 +24,7 @@ movieRouter.get('/movies/search', (req, res, next)=>{
     })
 })
 
-movieRouter.get('/movies/:id',ensureLogin.ensureLoggedIn(), (req, res, next)=>{
+movieRouter.get('/movies/:id',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
     const id = req.params.id;
     Movie.findById(id)
     .then((theMovie)=>{

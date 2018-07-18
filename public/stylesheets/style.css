@@ -250,8 +250,7 @@ footer {
 
 .profile-photo {
   position: absolute;
-  margin-top: 3rem;
-  margin-left: 7rem; }
+  margin-top: 3rem; }
 
 .profile-photo img {
   height: 250px; }
@@ -259,7 +258,6 @@ footer {
 .profile-name {
   position: absolute;
   margin-top: 29rem;
-  margin-left: 13rem;
   color: white;
   font-family: 'Quicksand', sans-serif; }
 
@@ -270,30 +268,31 @@ footer {
   background-color: rgba(85, 81, 81, 0.5);
   height: 360px;
   width: 400px;
-  margin-left: 5rem;
   margin-top: 5rem;
-  border-radius: 20px; }
+  border-radius: 20px;
+  align-items: center;
+  margin-left: 8rem; }
 
 @media (max-width: 480px) {
-  .profile-photo {
-    margin-left: 12rem; }
   .profile-info {
     margin-left: 2rem;
     width: 330px;
-    height: 200px; }
+    height: 200px;
+    text-align: center; }
   .profile-photo img {
     width: 80px;
     height: 80px; }
   .profile-name {
-    margin-top: 11rem;
-    margin-left: 10rem; } }
+    margin-top: 11rem; } }
 
 .showList {
   position: absolute;
   top: 8rem;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 4rem; }
+  margin-left: 4rem;
+  overflow: scroll;
+  height: 700px; }
 
 .show-cover img {
   max-width: 200px;
@@ -351,13 +350,18 @@ footer {
   padding-left: 5rem;
   color: white;
   font-family: 'Quicksand', sans-serif;
-  border-radius: 20px; }
+  border-radius: 20px;
+  overflow: scroll;
+  height: 420px; }
 
 .leave-review {
   position: absolute;
   margin-top: 8rem;
   left: 18rem;
-  font-size: 20px; }
+  font-size: 18px;
+  border: dotted #950740;
+  border-radius: 20px;
+  padding: 5px 10px; }
 
 #delete-btn {
   background-color: black;
@@ -485,7 +489,16 @@ textarea {
     width: 100px;
     height: 130px; }
   .showList {
-    margin-top: 2rem; } }
+    margin-top: 2rem; }
+  .links-in-nav {
+    font-size: 10px;
+    position: absolute;
+    left: 3rem;
+    margin-top: -1.5rem; }
+  .searchbar {
+    position: absolute;
+    margin-top: 7rem;
+    margin-left: -30rem; } }
 
 .search {
   position: absolute;

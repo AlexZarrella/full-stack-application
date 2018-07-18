@@ -7,7 +7,10 @@ const showSchema = new Schema({
   image: String,
   cast: [String],
   summary: String,
-  reviews: [{reviewer: String, rating: String, content: String}]
+  reviews: [
+    {reviewer: {type: Schema.Types.ObjectId, ref: "User"},
+     rating: String, content: String}
+  ]
 });
 
 const Show = mongoose.model("Show", showSchema);
