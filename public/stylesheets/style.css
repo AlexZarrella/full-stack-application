@@ -55,24 +55,24 @@ html {
 
 .title span {
   position: absolute;
-  color: #C3073F;
-  font-size: 9rem;
+  font-size: 12rem;
   font-family: 'Unlock', cursive;
-  margin-left: 8rem;
+  margin-left: 10rem;
   top: 20rem;
   width: 800px;
-  text-shadow: 10px 2px #6F2232; }
+  text-shadow: 10px 2px #6F2232;
+  color: #C3073F; }
 
 p {
   position: absolute;
   color: #8c8c8c;
   top: 35rem;
   width: 500px;
-  margin-left: 45rem;
+  margin-left: 48rem;
   text-align: center;
   font-family: 'Quicksand', sans-serif; }
 
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
   .title span {
     font-size: 4rem;
     top: 10rem;
@@ -92,12 +92,54 @@ p {
     margin-top: 0rem;
     left: -108rem; } }
 
+@media (min-width: 481px) and (max-width: 767px) {
+  .title span {
+    font-size: 6rem;
+    top: 10rem;
+    margin-left: 6.5rem; }
+  p {
+    margin-left: 9rem;
+    width: 300px;
+    top: 20rem; }
+  .login-password {
+    left: -25rem; }
+  .login-username input {
+    margin-top: -15rem; }
+  .login-username label {
+    margin-top: -15rem;
+    margin-left: 4rem; }
+  #log-in {
+    margin-top: 0rem;
+    left: -44rem; }
+  #create-act {
+    margin-top: 0rem;
+    left: -105rem; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  p {
+    margin-left: 10rem; }
+  #create-act a {
+    margin-top: 10rem;
+    margin-left: -180rem; } }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  p {
+    margin-left: 23rem; }
+  #create-act a {
+    margin-left: -160rem; }
+  .title span {
+    margin-left: 23rem; }
+  .login-username label {
+    margin-left: 13rem; }
+  .login-password label {
+    margin-left: 13rem; } }
+
 .login-username {
   display: flex;
   position: absolute;
   top: 46rem;
   color: white;
-  margin-left: 4rem;
+  margin-left: 6rem;
   font-family: 'Pathway Gothic One', sans-serif; }
 
 .login-password {
@@ -105,7 +147,7 @@ p {
   position: absolute;
   top: 46rem;
   color: white;
-  margin-left: 33rem;
+  margin-left: 36rem;
   font-family: 'Pathway Gothic One', sans-serif; }
 
 #log-in {
@@ -149,6 +191,19 @@ input {
   to {
     transform: translateY(-2000px); } }
 
+#account-btn {
+  position: absolute;
+  top: 60rem;
+  margin-left: 63rem;
+  padding: 10px 50px;
+  color: white;
+  background-color: rgba(60, 60, 61, 0.5);
+  border-radius: 30px;
+  border: dotted #6F2232;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px; }
+
 #signup-title {
   position: absolute;
   color: #C3073F;
@@ -159,7 +214,7 @@ input {
   text-shadow: 10px 2px #6F2232; }
 
 .background {
-  margin-top: -3rem; }
+  margin-top: -4rem; }
 
 .user-name {
   position: absolute;
@@ -167,7 +222,8 @@ input {
   display: flex;
   flex-direction: column;
   color: white;
-  margin-left: 22rem; }
+  margin-left: 22rem;
+  font-family: 'Quicksand', sans-serif; }
 
 .signup-username {
   position: absolute;
@@ -175,7 +231,8 @@ input {
   display: flex;
   flex-direction: column;
   color: white;
-  margin-left: 22rem; }
+  margin-left: 22rem;
+  font-family: 'Quicksand', sans-serif; }
 
 .signup-password {
   position: absolute;
@@ -183,7 +240,8 @@ input {
   display: flex;
   flex-direction: column;
   color: white;
-  margin-left: 22rem; }
+  margin-left: 22rem;
+  font-family: 'Quicksand', sans-serif; }
 
 .user-photo {
   position: absolute;
@@ -191,7 +249,8 @@ input {
   display: flex;
   flex-direction: column;
   color: white;
-  margin-left: 22rem; }
+  margin-left: 22rem;
+  font-family: 'Quicksand', sans-serif; }
 
 .input {
   width: 260px; }
@@ -212,6 +271,31 @@ input {
   color: white;
   top: 45rem;
   left: 28rem; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #signup-title {
+    font-size: 7rem;
+    margin-left: 4.5rem; }
+  .user-name, .signup-username, .signup-password, .user-photo {
+    margin-left: 6rem; } }
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #signup-title {
+    margin-left: 2rem; }
+  .user-name, .signup-username, .signup-password, .user-photo {
+    margin-left: 8rem; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #signup-title {
+    margin-left: 15rem; } }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #signup-title {
+    margin-left: 30rem; }
+  .user-name, .signup-username, .signup-password, .user-photo {
+    margin-left: 35rem; }
+  #account-btn {
+    margin-left: 40rem; } }
 
 ul {
   list-style-type: none; }
@@ -253,7 +337,8 @@ footer {
   margin-top: 3rem; }
 
 .profile-photo img {
-  max-height: 250px; }
+  max-height: 250px;
+  border-radius: 10px; }
 
 .profile-name {
   position: absolute;
@@ -268,12 +353,12 @@ footer {
   background-color: rgba(85, 81, 81, 0.5);
   height: 360px;
   width: 400px;
-  margin-top: 5rem;
+  margin-top: 15rem;
   border-radius: 20px;
   align-items: center;
   margin-left: 8rem; }
 
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
   .profile-info {
     margin-left: 2rem;
     width: 330px;
@@ -285,6 +370,27 @@ footer {
   .profile-name {
     margin-top: 11rem; } }
 
+@media (min-width: 481px) and (max-width: 767px) {
+  .profile-info {
+    margin-left: 2.5rem;
+    height: 250px;
+    width: 200px;
+    margin-top: 1rem; }
+  .profile-photo img {
+    max-width: 100px; }
+  .profile-name {
+    margin-top: 18rem; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profile-info {
+    height: 280px;
+    width: 300px;
+    margin-left: 2rem; }
+  .profile-photo img {
+    max-width: 130px; }
+  .profile-name {
+    margin-top: 20rem; } }
+
 .showList {
   position: absolute;
   top: 8rem;
@@ -295,8 +401,8 @@ footer {
   height: 700px; }
 
 .show-cover img {
-  max-width: 200px;
-  max-height: 200px; }
+  width: 140px;
+  height: 200px; }
 
 .show-info {
   display: flex;
@@ -308,6 +414,64 @@ footer {
 .title-show {
   color: white;
   font-family: 'Quicksand', sans-serif; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .show-info {
+    margin-top: 6rem;
+    margin-right: 2rem;
+    margin-bottom: -2rem; }
+  .show-cover img {
+    width: 100px;
+    height: 130px; }
+  .showList {
+    margin-top: 5rem;
+    height: 500px; }
+  .links-in-nav {
+    font-size: 10px;
+    position: absolute;
+    left: 3rem;
+    margin-top: -1.5rem; }
+  .searchbar {
+    position: absolute;
+    margin-top: 7rem;
+    margin-left: -30rem; }
+  footer {
+    visibility: hidden; } }
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .showList {
+    margin-top: 5rem;
+    height: 490px; }
+  .links-in-nav {
+    font-size: 10px;
+    position: absolute;
+    left: 5rem;
+    margin-top: -1.5rem; }
+  .searchbar {
+    position: absolute;
+    margin-top: 6rem;
+    margin-left: -25rem; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .showList {
+    margin-top: 5rem;
+    height: 450px; }
+  .links-in-nav {
+    font-size: 12px;
+    position: asbolute;
+    left: 10rem; }
+  .searchbar {
+    position: absolute;
+    margin-top: 6rem;
+    margin-left: -10rem; } }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .showList {
+    margin-top: 5rem;
+    height: 450px; }
+  .searchbar {
+    position: absolute;
+    left: 34rem; } }
 
 .showdetails-img img {
   max-height: 450px;
@@ -356,8 +520,8 @@ footer {
 
 .leave-review {
   position: absolute;
-  margin-top: 8rem;
-  left: 18rem;
+  margin-top: 60rem;
+  left: 110rem;
   font-size: 18px;
   border: dotted #950740;
   border-radius: 20px;
@@ -368,6 +532,98 @@ footer {
   border-radius: 10px;
   margin-bottom: 1rem;
   margin-left: 7rem; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .showdetails-img img {
+    width: 130px;
+    margin-top: 4rem;
+    margin-left: 2rem; }
+  #submit-review {
+    margin-left: 7rem; }
+  .leave-review {
+    margin-top: 60rem;
+    font-size: 14px;
+    margin-left: -95rem; }
+  .showdetails-info {
+    margin-left: 16rem;
+    font-size: 12px;
+    width: 220px;
+    padding: 2px 2px;
+    margin-top: -23rem; }
+  .showdetails-title {
+    font-size: 12px; }
+  .reviews h4 {
+    visibility: hidden; }
+  .show-all-reviews {
+    margin-left: -100.5rem;
+    margin-top: 32rem;
+    overflow: scroll;
+    height: 250px;
+    width: 350px; } }
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .showdetails-img img {
+    max-height: 250px;
+    margin-left: 2rem;
+    margin-top: 3rem; }
+  .leave-review {
+    margin-top: 51rem;
+    margin-left: -91rem;
+    font-size: 12px; }
+  .showdetails-info {
+    margin-left: 23rem;
+    font-size: 12px;
+    width: 230px;
+    margin-top: -20rem; }
+  .showdetails-title {
+    font-size: 10px; }
+  .show-all-reviews {
+    margin-left: -99rem;
+    width: 420px;
+    height: 180px;
+    margin-top: 32rem; }
+  .reviews h4 {
+    visibility: hidden; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .showdetails-img img {
+    max-width: 180px;
+    margin-top: 2rem;
+    margin-left: 13rem; }
+  .leave-review {
+    margin-top: 48rem;
+    margin-left: -57rem; }
+  .reviews h4 {
+    visibility: hidden; }
+  .showdetails-info {
+    margin-left: 2rem;
+    margin-top: 6rem;
+    font-size: 12px; }
+  .show-all-reviews {
+    margin-left: -58rem;
+    margin-top: 2rem;
+    overflow: scroll;
+    height: 450px; } }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .showdetails-img img {
+    max-height: 400px;
+    margin-left: 2rem;
+    margin-top: 7rem; }
+  .showdetails-info {
+    margin-left: 35rem;
+    width: 300px;
+    margin-top: -10rem; }
+  .reviews h4 {
+    visibility: hidden; }
+  .leave-review {
+    margin-left: -32rem;
+    margin-top: 48rem; }
+  .show-all-reviews {
+    margin-left: -33rem;
+    margin-top: 4rem;
+    overflow: scroll;
+    height: 430px; } }
 
 .review-image {
   max-height: 500px;
@@ -395,6 +651,71 @@ textarea {
 #submit-review {
   width: 150px;
   margin-left: 14rem; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .review-image {
+    max-width: 100px;
+    margin-left: -3rem;
+    margin-top: 3rem; }
+  .review-flex {
+    margin-left: -71rem;
+    width: 380px;
+    margin-top: 10rem;
+    overflow: scroll;
+    height: 380px; }
+  .rate-area {
+    width: 400px;
+    margin-left: -11rem; }
+  .entire-show-list {
+    overflow: scroll;
+    height: 700px;
+    position: absolute;
+    width: 400px; }
+  #submit-review {
+    font-size: 10px;
+    margin-left: 10rem; } }
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .review-image {
+    max-width: 130px;
+    margin-left: -3rem;
+    margin-top: 2rem; }
+  .review-flex {
+    margin-left: -70rem;
+    margin-top: 10rem;
+    width: 400px;
+    height: 380px; }
+  .rate-area {
+    width: 400px;
+    margin-left: -11rem; }
+  #submit-review {
+    font-size: 10px;
+    margin-left: 10rem; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .review-image {
+    max-width: 250px;
+    margin-top: 13rem;
+    margin-left: -15rem; }
+  .review-flex {
+    margin-left: -40rem;
+    width: 400px;
+    margin-top: -7rem; }
+  .rate-area {
+    width: 400px;
+    margin-left: -11rem; }
+  #submit-review {
+    font-size: 12px;
+    margin-left: 10rem; } }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .review-image {
+    max-height: 400px;
+    margin-left: -10rem;
+    margin-top: 10rem; }
+  .review-flex {
+    margin-left: -25rem;
+    margin-top: -5rem; } }
 
 .rate-area {
   border-style: none;
@@ -437,66 +758,6 @@ textarea {
   top: 2px;
   left: 2px; }
 
-@media (max-width: 480px) {
-  .showdetails-img img {
-    width: 130px;
-    margin-top: 2rem;
-    margin-left: 1rem; }
-  html {
-    overflow: visible;
-    height: 270%; }
-  #submit-review {
-    margin-left: 7rem; }
-  .showdetails-info {
-    margin-left: 0rem;
-    font-size: 12px;
-    width: 370px;
-    padding: 2px 2px;
-    margin-top: 6rem; }
-  .showdetails-title {
-    font-size: 12px; }
-  .reviews h4 {
-    margin-left: -98rem;
-    margin-top: 50rem; }
-  .show-all-reviews {
-    margin-left: -98rem;
-    margin-top: 60rem; }
-  footer {
-    visibility: hidden; } }
-
-@media (max-width: 480px) {
-  .review-image {
-    max-width: 130px;
-    margin-left: -8rem;
-    margin-top: 3rem; }
-  .review-flex {
-    margin-left: -73rem;
-    width: 350px;
-    margin-top: 25rem; }
-  .rate-area {
-    width: 400px;
-    margin-left: -11rem; } }
-
-@media (max-width: 480px) {
-  .show-info {
-    margin-top: 6rem;
-    margin-right: 2rem;
-    margin-bottom: -2rem; }
-  .show-cover img {
-    width: 100px;
-    height: 130px; }
-  .showList {
-    margin-top: 4rem; }
-  .links-in-nav {
-    font-size: 10px;
-    position: absolute;
-    left: 3rem;
-    margin-top: -1.5rem; }
-  .searchbar {
-    position: absolute;
-    margin-top: 7rem;
-    margin-left: -30rem; } }
-
 .search {
   position: absolute;
   margin-left: 33rem;
@@ -516,5 +777,59 @@ textarea {
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px; }
+
+.reviewedShows {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(85, 81, 81, 0.5);
+  width: 700px;
+  height: 230px;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 60rem;
+  position: absolute;
+  margin-top: 8rem;
+  overflow: scroll; }
+
+.reviewedShows-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  color: white;
+  align-items: center;
+  margin-top: 1rem;
+  font-family: 'Quicksand', sans-serif; }
+
+.reviewedShows-image img {
+  width: 100px;
+  border-radius: 20px; }
+
+.reviewedMovies {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(85, 81, 81, 0.5);
+  width: 700px;
+  height: 230px;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 60rem;
+  position: absolute;
+  margin-top: 40rem;
+  overflow: scroll; }
+
+.showreviews {
+  position: absolute;
+  text-shadow: 4px 2px #6F2232;
+  color: #C3073F;
+  margin-left: 80rem;
+  font-family: 'Unlock', cursive; }
+
+.moviereviews {
+  position: absolute;
+  margin-left: 80rem;
+  margin-top: 35rem;
+  text-shadow: 4px 2px #6F2232;
+  color: #C3073F;
+  font-family: 'Unlock', cursive; }
 
 /*# sourceMappingURL=style.css.map */

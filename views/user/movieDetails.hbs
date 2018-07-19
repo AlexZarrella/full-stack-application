@@ -2,7 +2,7 @@
         <div class="row nav-row">
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
-                <h1 class= "nav-title"> Binge Rate </h1>
+                <h1 class= "nav-title">RateFlix</h1>
             </div> 
             <div class="col-sm-4">
                 <ul class="links-in-nav">
@@ -41,11 +41,13 @@
         <br>
         <span>{{this.content}}</span>
         <br>
-        <form action="/movies/{{../theMovie._id}}/reviews/delete/{{@index}}" method= "post"> 
+        <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
             <button id= "delete-btn">Delete</button>
+            <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
         </form>
         {{/each}}
-              {{#each otherReviews}}
+              
+        {{#each otherReviews}}
         <span>Name: {{this.reviewer.username}}</span>
         <br>
         <span>Rating: {{this.rating}}</span>
@@ -62,5 +64,5 @@
 
 
 <footer>
-    <h5>Created by Alex</h5>
+    <h5>RateFlix</h5>
 </footer>

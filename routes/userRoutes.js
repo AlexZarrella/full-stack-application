@@ -4,6 +4,8 @@ const User          = require ('../models/userModel');
 const bcrypt        = require('bcryptjs');
 const passport      = require('passport');
 const ensureLogin = require('connect-ensure-login');
+const Show          = require ('../models/showModel');
+const Movie         = require ('../models/movieModel');
 const flash        = require('connect-flash');
 
 const uploadCloud  = require('../config/cloudinary');
@@ -56,27 +58,56 @@ userRouter.post('/signup', uploadCloud.single('photo'), (req, res, next)=>{
 });
 });
 
-userRouter.get('/profile/:id', (req, res, next)=>{
-    const userID = req.params.id;
-    User.findById(userID)
-    .then((theUser)=>{
-        res.render('user/userProfile', {theUser})
-    })
-    .catch((err)=>{
-        next(err);
-    })
-})
+// userRouter.get('/profile/:id', (req, res, next)=>{
+//     const userID = req.params.id;
+//     User.findById(userID)
+//     .then((theUser)=>{
+//         res.render('user/userProfile', {theUser})
+//     })
+//     .catch((err)=>{
+//         next(err);
+//     })
+// })
 
 userRouter.get('/myprofile',ensureLogin.ensureLoggedIn(), (req, res, next)=> {
-    const userID = req.user._id;
-    User.findById(userID)
-    .then((theUser)=>{
-        res.render('user/userProfile', {theUser})
+    const showsIReviewed = [];
+    const moviesIReviewed = [];
+
+    Show.find()
+    .then((allTheShows)=>{
+        allTheShows.forEach(function(eachShow){
+            if (eachShow.reviews.some(function(eachReview){
+                return eachReview.reviewer.equals(req.user._id)
+            })){
+                    showsIReviewed.push(eachShow)
+                }
+            })
+    
+    Movie.find()
+    .then((allTheMovies)=>{
+        allTheMovies.forEach(function(eachMovie){
+            if (eachMovie.reviews.some(function(eachReview){
+                console.log('each review: ', eachReview)
+                return (eachReview.reviewer).equals(req.user._id)
+            })){
+                moviesIReviewed.push(eachMovie)
+                console.log('moviesIReviewed.push(eachMovie) : ',moviesIReviewed )
+            }
+        })
+    })      
+    
+            setTimeout(( ) => {
+                res.render('user/userProfile', {theUser: req.user, showsIReviewed: showsIReviewed, moviesIReviewed: moviesIReviewed} )
+            }, 100);    
+        })
     })
-    .catch((err)=>{
-        next(err);
-    })
-})
+
+
+
+
+    
+    
+ 
 
 
 

@@ -23,7 +23,7 @@ mongoose.Promise = Promise;
 mongoose
   .connect(process.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
-    console.log('Connected to Mongo!')
+    console.log('Connected to Mongo db =======!')
   }).catch(err => {
     console.error('Error connecting to mongo', err)
   });

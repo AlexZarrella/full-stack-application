@@ -28,10 +28,12 @@ movieRouter.get('/movies/:id',ensureLogin.ensureLoggedIn('/'), (req, res, next)=
     const id = req.params.id;
     const otherReviews = [];
     const myReviews = [];
+
     Movie.findById(id)
     .populate('reviews.reviewer')
     .then((theMovie)=>{
-        theShow.reviews.forEach(function(oneReview){
+        theMovie.reviews.forEach(function(oneReview){
+            console.log("oneReview: ", oneReview)
             if (oneReview.reviewer._id.equals(req.user._id)){
                 myReviews.push(oneReview);
             }
@@ -39,12 +41,14 @@ movieRouter.get('/movies/:id',ensureLogin.ensureLoggedIn('/'), (req, res, next)=
                 otherReviews.push(oneReview);
             }
         })
-        res.render('user/movieDetails', {theMovie});
+        res.render('user/movieDetails', {theMovie: theMovie, theUser: req.user, otherReviews: otherReviews, myReviews: myReviews});
     })
     .catch((err)=>{
         next(err);
     })
 })
+
+
 
 
 

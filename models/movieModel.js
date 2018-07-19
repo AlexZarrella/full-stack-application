@@ -7,7 +7,11 @@ const movieSchema = new Schema({
   image: String,
   cast: [String],
   plot: String,
-  reviews: [{reviewer: String, rating: String, content: String}]
+  reviews: [{
+     reviewer: {type: Schema.Types.ObjectId, ref: "User"},
+     rating: String, 
+     content: String
+    }]
 });
 
 const Movie = mongoose.model("Movie", movieSchema);

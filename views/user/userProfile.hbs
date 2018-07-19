@@ -4,7 +4,7 @@
         <div class="row nav-row">
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
-                <h1 class= "nav-title"> Binge Rate </h1>
+                <h1 class= "nav-title">RateFlix</h1>
             </div> 
             <div class="col-sm-4">
                 <ul class="links-in-nav">
@@ -27,11 +27,36 @@
     </div>
 </div>
 
+<h2 class= "showreviews">Shows You Reviewed: </h2>
+<div class= "reviewedShows">
 
+{{#each showsIReviewed}}
+    <div class= "reviewedShows-info">
+        <div class= "reviewedShows-image">
+            <img src="{{this.image}}" alt="">
+            </div>
+        <span>{{this.title}}</span>
+    </div>
+{{/each}}
+</div>
+
+<h2 class= "moviereviews">Movies You Reviewed: </h2>
+<div class= "reviewedMovies">
+
+
+{{#each moviesIReviewed}}
+    <div class= "reviewedShows-info">
+        <div class= "reviewedShows-image">
+            <a href="/movies/{{this._id}}"><img src="{{this.image}}" alt=""></a>
+            </div>
+        <span>{{this.title}}</span>
+    </div>
+{{/each}}
+</div>
 
 
 
 <footer>
-    <h5>Created by Alex</h5>
+    <h5>RateFlix</h5>
 </footer>
 {{/if}}

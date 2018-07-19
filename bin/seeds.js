@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Show     = require('../models/showModel');
 const Movie    = require ('../models/movieModel');
 
-const dbName = 'starter-code';
+// const dbName = 'starter-code';
+// mongoose.connect('mongodb://localhost/rate-flex');
 mongoose.connect(process.env.MONGODB_URI);
 
 const shows = [{

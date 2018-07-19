@@ -14,11 +14,11 @@
                 </ul>
             </div>
         </div>
-<img class= "review-image" src="{{theShow.image}}" alt="">
+<img class= "review-image" src="{{theMovie.image}}" alt="">
 
 
 
-<form action="/shows/{{theShow._id}}/reviews/update/{{@index}}" method="post">
+<form action="/movies/{{theMovie._id}}/reviews/update/{{@index}}" method="post">
 
 <div class= "review-flex">
 <label for= "reviewer">Name: {{review.reviewer.username}} </label>
