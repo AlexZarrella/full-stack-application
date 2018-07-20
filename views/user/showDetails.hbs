@@ -43,8 +43,8 @@
             <br>
                 <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
                     <button id= "delete-btn">Delete</button>
-                    <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
                 </form>
+                <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
         {{/each}}
         
         {{#each otherReviews}}

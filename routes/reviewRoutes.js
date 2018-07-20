@@ -47,22 +47,31 @@ reviewRouter.get('/shows/:id/reviews/edit/:reviewIndex',ensureLogin.ensureLogged
 
 })
 
-reviewRouter.get('/shows/:id/reviews/update/:reviewIndex', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
-    const reviewIndex = req.params.reviewIndex;
+// /shows/{{theShow._id}}/reviews/{{review._id}}/update
+reviewRouter.post('/shows/:id/reviews/:reviewId/update', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
+    const reviewId = req.params.reviewId;
+    
     const updateReview = {
-        reviewer: req.body.reviewer,
+        reviewer: req.user._id,
         rating: req.body.rating,
         content: req.body.content
     }
-    Show.findByIdAndUpdate(req.params.id, {updateReview: updateReview, reviewIndex: reviewIndex}) 
 
-.then((theShow)=>{
-    res.redirect('/shows/' + theShow._id)
-})
-
-.catch((err)=>{
-    next(err);
-})
+    Show.findById(req.params.id) 
+    .then( foundShow => {
+        for( var i=0; i < foundShow.reviews.length; i++){       
+            if((foundShow.reviews[i]._id).toString() === reviewId.toString()){
+                foundShow.reviews[i] = Object.assign(updateReview);
+                break;
+            }     
+        } 
+        foundShow.save()
+            .then( () => {
+                    res.redirect('/shows/' + foundShow._id)
+            } )
+            .catch( err => next(err) )
+    } )
+    .catch( err => next(err) )
 })
 
 reviewRouter.post('/shows/:id/reviews/delete/:reviewIndex',ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
@@ -123,22 +132,30 @@ reviewRouter.get('/movies/:id/reviews/edit/:reviewIndex',ensureLogin.ensureLogge
 
 })
 
-reviewRouter.get('/movies/:id/reviews/update/:reviewIndex', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
-    const reviewIndex = req.params.reviewIndex;
+reviewRouter.post('/movies/:id/reviews/:reviewId/update', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
+    const reviewId = req.params.reviewId;
+    
     const updateReview = {
-        reviewer: req.body.reviewer,
+        reviewer: req.user._id,
         rating: req.body.rating,
         content: req.body.content
     }
-    Movie.findByIdAndUpdate(req.params.id, {updateReview: updateReview, reviewIndex: reviewIndex}) 
 
-.then((theMovie)=>{
-    res.redirect('/movies/' + theMovie._id)
-})
-
-.catch((err)=>{
-    next(err);
-})
+    Movie.findById(req.params.id) 
+    .then( foundShow => {
+        for( var i=0; i < foundShow.reviews.length; i++){       
+            if((foundShow.reviews[i]._id).toString() === reviewId.toString()){
+                foundShow.reviews[i] = Object.assign(updateReview);
+                break;
+            }     
+        } 
+        foundShow.save()
+            .then( () => {
+                    res.redirect('/movies/' + foundShow._id)
+            } )
+            .catch( err => next(err) )
+    } )
+    .catch( err => next(err) )
 })
 
 reviewRouter.post('/movies/:id/reviews/delete/:reviewIndex', ensureLogin.ensureLoggedIn('/'),(req, res, next)=>{

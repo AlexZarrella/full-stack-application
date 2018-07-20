@@ -17,8 +17,7 @@
 <img class= "review-image" src="{{theShow.image}}" alt="">
 
 
-
-<form action="/shows/{{theShow._id}}/reviews/update/{{@index}}" method="post">
+<form action="/shows/{{theShow._id}}/reviews/{{review._id}}/update" method="post">
 
 <div class= "review-flex">
     <label for= "reviewer">Name: {{review.reviewer.username}} </label>
