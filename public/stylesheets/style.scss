@@ -553,7 +553,10 @@ margin-left: 8rem;
 .show-cover img{
   width: 140px;
   height: 200px;
+  border-radius: 10px;
 }
+
+
 
 .show-info {
   display: flex;
@@ -561,6 +564,7 @@ margin-left: 8rem;
   text-align: center;
   margin-right: 3rem;
   margin-bottom: 1rem;
+
 }
 
 .title-show {

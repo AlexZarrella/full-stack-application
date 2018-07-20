@@ -358,7 +358,7 @@ const shows = [{
     summary: "After a brutal virus wipes out most of the population, two young siblings embark on a perilous search for safety."
 },
 {
-    title: "Unbreakable: Kimmy Schmidt",
+    title: "Unbreakable: Kimmy",
     genre: "Comedy",
     image: "/images/showpic/unbreakablecover.jpg",
     cast: ["Ellie Kemper", "Jane Krakowski", "Tituss Burgess"],
@@ -381,7 +381,7 @@ const shows = [{
 {
     title: "The Keepers",
     genre: "Documentary",
-    image: "/images/showpic/thekeepers.jpg",
+    image: "/images/showpic/thekeeperscover.jpg",
     cast: ["Gemma Hoskins", "Abbie Schnaub", "Jean Hargadon Wehner"],
     summary: "A seven-part docuseries about the unsolved murder of a nun and the horrific secrets and pain that linger nearly five decades after her death."
 },
