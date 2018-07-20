@@ -33,29 +33,29 @@
         <h4>Reviews</h4>
     </div>
 
-    <div class= "show-all-reviews">
-        {{#each myReviews}}
-        <span>Name: {{this.reviewer.username}}</span>
-        <br>
-        <span>Rating: {{this.rating}}</span>
-        <br>
-        <span>{{this.content}}</span>
-        <br>
-        <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
-            <button id= "delete-btn">Delete</button>
-            <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
-        </form>
-        {{/each}}
+        <div class= "show-all-reviews">
+            {{#each myReviews}}
+            <span>Name: {{this.reviewer.username}}</span>
+                <br>
+            <span>Rating: {{this.rating}} / 5 stars</span>
+                <br>
+            <span>{{this.content}}</span>
+                <br>
+                <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
+                    <button id= "delete-btn">Delete</button>
+                    <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
+                </form>
+            {{/each}}
               
-        {{#each otherReviews}}
-        <span>Name: {{this.reviewer.username}}</span>
-        <br>
-        <span>Rating: {{this.rating}}</span>
-        <br>
-        <span>{{this.content}}</span>
-        <br>
-        {{/each}}
-    </div>
+            {{#each otherReviews}}
+            <span>Name: {{this.reviewer.username}}</span>
+                <br>
+            <span>Rating: {{this.rating}}</span>
+                <br>
+            <span>{{this.content}}</span>
+                <br>
+            {{/each}}
+        </div>
 
 <div class= "leave-review">
     <a href="/movies/{{theMovie._id}}/reviews/new">Leave a review</a>
@@ -66,3 +66,4 @@
 <footer>
     <h5>RateFlix</h5>
 </footer>
+</div>

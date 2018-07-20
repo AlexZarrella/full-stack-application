@@ -14,32 +14,32 @@
                 </ul>
             </div>
         </div>
-<div class="wrap">
-   <div class="search">
-       <form action="/movies/search" method= "get">
-       <div class= "searchbar"> 
-            <input type="text" name= "searchInput" class="searchTerm" placeholder="What are you looking for?">
-            <button type="submit" class="searchButton">
-        </form>
-        <i class="fa fa-search"></i>
-             </div>
-     </button>
-
-   </div>
-</div>
-    <div class= "showList">
-        {{#each listOfMovies}}
-    <div class= "show-info">
-        <div class= "show-cover">
-            <a href= "/movies/{{this._id}}"><img src="{{this.image}}" alt=""></a>
-        </div>
-            <div class= "title-show">
-                {{this.title}}
+    <div class="wrap">
+        <div class="search">
+            <form action="/movies/search" method= "get">
+                <div class= "searchbar"> 
+                    <input type="text" name= "searchInput" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+            </form>
+                    <i class="fa fa-search"></i>
             </div>
-    </div>
+                    </button>
 
-{{/each}}
+        </div>
     </div>
+<div class= "showList">
+    {{#each listOfMovies}}
+        <div class= "show-info">
+            <div class= "show-cover">
+                <a href= "/movies/{{this._id}}"><img src="{{this.image}}" alt=""></a>
+            </div>
+                <div class= "title-show">
+                    {{this.title}}
+                </div>
+        </div>
+
+    {{/each}}
+</div>
 </div>
 
 <footer>

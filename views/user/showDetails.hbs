@@ -36,23 +36,24 @@
     <div class= "show-all-reviews">
         {{#each myReviews}}
         <span>Name: {{this.reviewer.username}}</span>
-        <br>
-        <span>Rating: {{this.rating}} / 5</span>
-        <br>
+            <br>
+        <span>Rating: {{this.rating}} / 5 stars</span>
+            <br>
         <span>{{this.content}}</span>
-        <br>
-        <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
-            <button id= "delete-btn">Delete</button>
-            <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
-        </form>
+            <br>
+                <form action="/shows/{{../theShow._id}}/reviews/delete/{{@index}}" method= "post"> 
+                    <button id= "delete-btn">Delete</button>
+                    <a href="/shows/{{../theShow._id}}/reviews/edit/{{@index}}">Edit Review</a>
+                </form>
         {{/each}}
+        
         {{#each otherReviews}}
         <span>Name: {{this.reviewer.username}}</span>
-        <br>
+            <br>
         <span>Rating: {{this.rating}} / 5</span>
-        <br>
+            <br>
         <span>{{this.content}}</span>
-        <br>
+            <br>
         {{/each}}
     </div>
 

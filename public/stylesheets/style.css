@@ -74,7 +74,7 @@ p {
 
 @media (min-width: 320px) and (max-width: 480px) {
   .title span {
-    font-size: 4rem;
+    font-size: 5rem;
     top: 10rem;
     margin-left: 6.5rem; }
   p {
@@ -82,9 +82,10 @@ p {
     width: 300px;
     top: 20rem; }
   .login-password {
-    left: -30rem; }
+    left: -33rem; }
   .login-username {
-    margin-top: -15rem; }
+    margin-top: -15rem;
+    left: -3rem; }
   #log-in {
     margin-top: 0rem;
     left: -50rem; }
@@ -102,12 +103,12 @@ p {
     width: 300px;
     top: 20rem; }
   .login-password {
-    left: -25rem; }
+    left: -28rem; }
   .login-username input {
     margin-top: -15rem; }
   .login-username label {
     margin-top: -15rem;
-    margin-left: 4rem; }
+    margin-left: 0rem; }
   #log-in {
     margin-top: 0rem;
     left: -44rem; }
@@ -362,13 +363,14 @@ footer {
   .profile-info {
     margin-left: 2rem;
     width: 330px;
-    height: 200px;
-    text-align: center; }
+    height: 130px;
+    text-align: center;
+    margin-top: 2rem; }
   .profile-photo img {
     max-width: 80px;
     max-height: 80px; }
   .profile-name {
-    margin-top: 11rem; } }
+    margin-top: 7rem; } }
 
 @media (min-width: 481px) and (max-width: 767px) {
   .profile-info {
@@ -531,7 +533,8 @@ footer {
   background-color: black;
   border-radius: 10px;
   margin-bottom: 1rem;
-  margin-left: 7rem; }
+  margin-left: 3rem;
+  margin-right: 2rem; }
 
 @media (min-width: 320px) and (max-width: 480px) {
   .showdetails-img img {
@@ -831,5 +834,147 @@ textarea {
   text-shadow: 4px 2px #6F2232;
   color: #C3073F;
   font-family: 'Unlock', cursive; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #account-btn {
+    margin-left: 10rem; }
+  #login-btn {
+    margin-left: 16rem; }
+  .reviewedShows {
+    margin-left: 1.5rem;
+    width: 340px;
+    height: 170px;
+    margin-top: 19rem;
+    overflow: scroll; }
+  .showreviews {
+    margin-left: 11rem;
+    font-size: 14px;
+    margin-top: 17rem; }
+  .reviewedShows-image img {
+    height: 80px;
+    width: 70px; }
+  .reviewedShows-info {
+    font-size: 10px; }
+  .reviewedMovies {
+    margin-left: 1.5rem;
+    width: 340px;
+    height: 170px;
+    overflow: scroll; }
+  .moviereviews {
+    margin-left: 11rem;
+    font-size: 14px;
+    margin-top: 38rem; } }
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #account-btn {
+    margin-left: 14rem; }
+  #login-btn {
+    margin-left: 20rem; }
+  .profile-info {
+    height: 160px;
+    width: 250px;
+    margin-left: 10rem; }
+  .profile-name {
+    margin-top: 10rem; }
+  .reviewedShows {
+    margin-left: 1.5rem;
+    width: 450px;
+    height: 150px;
+    margin-top: 21rem;
+    overflow: scroll; }
+  .showreviews {
+    margin-left: 15rem;
+    font-size: 16px;
+    margin-top: 19rem; }
+  .reviewedShows-image img {
+    height: 80px;
+    width: 70px; }
+  .reviewedShows-info {
+    font-size: 10px; }
+  .reviewedMovies {
+    margin-left: 1.5rem;
+    width: 450px;
+    height: 150px;
+    margin-top: 41rem;
+    overflow: scroll; }
+  .moviereviews {
+    margin-left: 15rem;
+    font-size: 16px;
+    margin-top: 39rem; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #log-in {
+    margin-left: 32rem; }
+  #account-btn {
+    margin-left: 26rem; }
+  #login-btn {
+    margin-left: 33rem; }
+  .profile-info {
+    margin-top: 2rem;
+    height: 170px;
+    margin-left: 22rem; }
+  .profile-name {
+    margin-top: 11rem; }
+  .reviewedShows {
+    margin-left: 1.5rem;
+    width: 700px;
+    height: 150px;
+    margin-top: 23rem;
+    overflow: scroll; }
+  .reviewedShows-image img {
+    height: 80px;
+    width: 70px; }
+  .showreviews {
+    margin-left: 3rem;
+    font-size: 18px;
+    margin-top: 20rem; }
+  .moviereviews {
+    margin-left: 3rem;
+    font-size: 18px;
+    margin-top: 40rem; }
+  .reviewedMovies {
+    margin-left: 1.5rem;
+    width: 700px;
+    height: 150px;
+    margin-top: 42rem;
+    overflow: scroll; } }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #log-in {
+    margin-left: 45rem; }
+  #login-btn {
+    margin-left: 47rem; }
+  .profile-info {
+    margin-top: 18rem;
+    height: 240px;
+    margin-left: 4rem; }
+  .profile-photo img {
+    height: 150px; }
+  .profile-name {
+    margin-top: 18rem; }
+  .reviewedShows {
+    margin-left: 52rem;
+    width: 480px;
+    height: 200px;
+    margin-top: 6rem; }
+  .showreviews {
+    font-size: 20px;
+    margin-left: 64rem;
+    margin-top: 3rem; }
+  .reviewedShows-image img {
+    height: 120px;
+    width: 80px; }
+  .reviewedMovies {
+    margin-left: 52rem;
+    width: 480px;
+    height: 200px;
+    margin-top: 34rem;
+    overflow: scroll; }
+  .reviewedShows-info {
+    font-size: 12px; }
+  .moviereviews {
+    font-size: 20px;
+    margin-top: 31rem;
+    margin-left: 64rem; } }
 
 /*# sourceMappingURL=style.css.map */
