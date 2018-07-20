@@ -123,12 +123,13 @@ reviewRouter.get('/movies/:id/reviews/edit/:reviewIndex',ensureLogin.ensureLogge
 })
 
 reviewRouter.get('/movies/:id/reviews/update/:reviewIndex', ensureLogin.ensureLoggedIn('/'), (req, res, next)=>{
+    const reviewIndex = req.params.reviewIndex;
     const updateReview = {
         reviewer: req.body.reviewer,
         rating: req.body.rating,
         content: req.body.content
     }
-    Movie.findByIdAndUpdate(req.params.id, {updateReview}) 
+    Movie.findByIdAndUpdate(req.params.id, {updateReview: updateReview, reviewIndex: reviewIndex}) 
 
 .then((theMovie)=>{
     res.redirect('/movies/' + theMovie._id)
